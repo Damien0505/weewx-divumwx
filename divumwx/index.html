@@ -380,9 +380,30 @@ body.dark .chart-modal-title {
 body.dark .chart-modal-iframe {
   background: var(--dark-body);
 }
+.card-visibility-modal-box {
+  width: auto;
+  height: auto;
+  max-width: 640px;
+  max-height: 80vh;
+}
+.card-visibility-modal-body {
+  padding: 16px 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.card-visibility-modal-body .settings-hint {
+  margin: 0 0 12px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+.card-visibility-modal-body .card-visibility-list {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
 @media (max-width: 600px) {
   .chart-modal-overlay { padding: 0; }
   .chart-modal-box { max-width: none; max-height: none; border-radius: 0; }
+  .card-visibility-modal-box { max-width: none; max-height: none; }
 }
 .card-not-enabled {
   display: none !important;
@@ -529,6 +550,20 @@ setInterval(() => {
     </div>
     <div class="chart-modal-body">
       <iframe id="chartModalIframe" class="chart-modal-iframe" title="Chart" src="about:blank"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="chart-modal-overlay card-visibility-modal-overlay" id="cardVisibilityModalOverlay" role="dialog" aria-modal="true" aria-labelledby="cardVisibilityModalTitle">
+  <div class="chart-modal-box card-visibility-modal-box">
+    <div class="chart-modal-header">
+      <span class="chart-modal-title" id="cardVisibilityModalTitle" data-i18n="Select Cards to Display">Select Cards to Display</span>
+      <button type="button" class="chart-modal-close" id="cardVisibilityModalClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="chart-modal-body card-visibility-modal-body">
+      <p class="settings-hint" data-i18n="Choose which cards show on this dashboard. Saved on this browser only.">Choose which cards show on this dashboard. Saved on this browser only.</p>
+      <div id="cardVisibilityList" class="card-visibility-list"></div>
+      <button type="button" id="cardVisibilityReset" class="settings-reset-btn" data-i18n="Reset to defaults">Reset to defaults</button>
     </div>
   </div>
 </div>
@@ -876,6 +911,9 @@ includeHTML(() => {
     localStorage.setItem(THEME_KEY, next);
     applyDashboardTheme();
   };
+  document.getElementById('cardVisibilityBtn').onclick = () => {
+    document.getElementById('cardVisibilityModalOverlay').classList.add('open');
+  };
   applyDashboardTheme();
   populateUnitSelector();
   broadcastUnitSystem();
@@ -886,20 +924,116 @@ includeHTML(() => {
 });
 window.addEventListener('load', hideIncompleteRow);
 window.addEventListener('load', updateFooterVisibility);
+
+(function(){
+  var overlay = document.getElementById('cardVisibilityModalOverlay');
+  var closeBtn = document.getElementById('cardVisibilityModalClose');
+  function close(){ overlay.classList.remove('open'); }
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+})();
 </script>
 <script>
-// ==== CARD VISIBILITY (replaces the old dynamic-script-loader approach) ====
+// ==== CARD VISIBILITY (server default + optional per-browser overrides) ====
 (function(){
+  // display labels for every card this dashboard knows about, in on-page order
+  var CARD_CATALOG = [
+    ['cardClockOutlook', 'StationTime | Outlook'],
+    ['cardCurrent', 'Current Conditions'],
+    ['cardForecast', 'Forecast'],
+    ['cardTemperature', 'Temperature'],
+    ['cardAnemometer', 'Anemometer'],
+    ['cardWindCompass', 'Direction | Windspeed'],
+    ['cardBarometer', 'Barometer'],
+    ['cardPiezoRain', 'Piezo Rain'],
+    ['cardTippingRain', 'Tipping Rain'],
+    ['cardSolarRadiation', 'Solar Radiation'],
+    ['cardUvIndex', 'UV Index'],
+    ['cardHumidity', 'Humidity'],
+    ['cardEarthDaylight', 'Earth Daylight'],
+    ['cardSolarDial', 'Solar Dial'],
+    ['cardGeocentric', 'Geocentric Universe'],
+    ['cardMoonPhase', 'Current Moonphase'],
+    ['cardLightning', 'Lightning'],
+    ['cardPollen', 'Pollen'],
+    ['cardGreenhouseGas', 'Greenhouse Gas'],
+    ['cardAirquality', 'Air Quality'],
+    ['cardVapourPressureDeficit', 'Vapour Pressure Deficit'],
+    ['cardEvapoTranspiration', 'Evapotranspiration'],
+    ['cardEarthquake', 'Earthquake'],
+    ['cardWebcam', 'Webcam'],
+    ['cardStationImage', 'Station Image']
+  ];
+  var OVERRIDES_KEY = 'dashboardCardOverrides';
+  var serverEnabled = [];
+
+  function getOverrides(){
+    try { return JSON.parse(localStorage.getItem(OVERRIDES_KEY) || '{}'); } catch (e) { return {}; }
+  }
+  function saveOverrides(obj){
+    try { localStorage.setItem(OVERRIDES_KEY, JSON.stringify(obj)); } catch (e) {}
+  }
+  // a card is visible if the user has personally toggled it (override wins),
+  // otherwise it falls back to whatever weewx.conf's enabled_cards says
+  function isCardVisible(id){
+    var overrides = getOverrides();
+    if (Object.prototype.hasOwnProperty.call(overrides, id)) return !!overrides[id];
+    return serverEnabled.indexOf(id) !== -1;
+  }
+  function applyCardVisibility(){
+    document.querySelectorAll('.card[data-card-id]').forEach(function(el){
+      el.classList.toggle('card-not-enabled', !isCardVisible(el.dataset.cardId));
+    });
+    if (typeof hideIncompleteRow === 'function') hideIncompleteRow();
+    if (typeof updateFooterVisibility === 'function') updateFooterVisibility();
+  }
+
+  function buildPanel(){
+    var list = document.getElementById('cardVisibilityList');
+    var resetBtn = document.getElementById('cardVisibilityReset');
+    if (!list || !resetBtn) return;
+    list.innerHTML = '';
+    CARD_CATALOG.forEach(function(entry){
+      var id = entry[0], label = entry[1];
+      if (!document.querySelector('.card[data-card-id="' + id + '"]')) return;
+      var row = document.createElement('label');
+      row.className = 'card-visibility-row';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = isCardVisible(id);
+      cb.addEventListener('change', function(){
+        var overrides = getOverrides();
+        overrides[id] = cb.checked;
+        saveOverrides(overrides);
+        applyCardVisibility();
+      });
+      var span = document.createElement('span');
+      span.textContent = label;
+      row.appendChild(cb);
+      row.appendChild(span);
+      list.appendChild(row);
+    });
+    if (!resetBtn.dataset.wired) {
+      resetBtn.dataset.wired = '1';
+      resetBtn.addEventListener('click', function(){
+        saveOverrides({});
+        buildPanel();
+        applyCardVisibility();
+      });
+    }
+  }
+  window.dvmBuildCardVisibilityPanel = buildPanel;
+
   fetch('./jsondata/archive.json' + '?_=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(data){
       var enabled = data && data.meta && data.meta.enabled_cards;
-      if (!Array.isArray(enabled) || enabled.length === 0) return;
-      document.querySelectorAll('.card[data-card-id]').forEach(function(el){
-        if (enabled.indexOf(el.dataset.cardId) === -1) el.classList.add('card-not-enabled');
-      });
-      if (typeof hideIncompleteRow === 'function') hideIncompleteRow();
-      if (typeof updateFooterVisibility === 'function') updateFooterVisibility();
+      serverEnabled = Array.isArray(enabled) ? enabled : [];
+      applyCardVisibility();
+      buildPanel();
     })
     .catch(function(){ });
 })();
