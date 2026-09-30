@@ -11,7 +11,6 @@
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Solar System Orrery</title>
 
@@ -27,7 +26,7 @@
 html, body { margin: 0; overflow: hidden; }
 body { background: var(--bs-body-bg); transition: background-color .2s; }
 .tooltip-box {
-  position: absolute; visibility: hidden; font-family: 'Lexend', system-ui, sans-serif; font-size: 7.5px;
+  position: absolute; visibility: hidden; font-family: Verdana, system-ui, sans-serif; font-size: 7.5px;
   background-color: #292e35; border-width: 1px; border-style: solid;
   border-radius: 5px; padding: 10px; box-shadow: 2px 2px 20px; opacity: 0.9;
   pointer-events: none;
@@ -186,7 +185,7 @@ html[data-season="summer"] body, html[data-season="autumn"] body {
 
   function panelText(x, y, text, fill, size, weight){
     return svg.append('text').attr('x', x).attr('y', y).attr('text-anchor', 'left')
-      .style('font-size', (size || 14) + 'px').style('font-family', "'Lexend', system-ui, sans-serif")
+      .style('font-size', (size || 14) + 'px').style('font-family', "Verdana, system-ui, sans-serif")
       .style('font-weight', weight || 'normal').style('fill', fill).text(text);
   }
   panelText(510, 136, 'Orrery', '#FF6347', 14, 'bold');

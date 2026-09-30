@@ -98,7 +98,7 @@ html[data-bs-theme="dark"] body.season-summer header, html[data-bs-theme="dark"]
   flex: 1 1 auto;
   min-width: 0;
   max-width: 100%;
-  font-family: 'Lexend', system-ui, sans-serif;
+  font-family: Verdana, system-ui, sans-serif;
   font-variant-caps: small-caps;
   letter-spacing: .08em;
   font-size: 1.15rem;
@@ -152,7 +152,7 @@ html[data-bs-theme="dark"] body.season-summer header, html[data-bs-theme="dark"]
 
 .site-nav-link {
   color: inherit;
-  font-family: 'Lexend', system-ui, sans-serif;
+  font-family: Verdana, system-ui, sans-serif;
   letter-spacing: .03em;
   text-decoration: none;
   font-size: 14.2px;
@@ -352,5 +352,5 @@ body.menu-open .menu {
 }
 
 * {
-  font-family: 'Lexend', system-ui, sans-serif !important;
+  font-family: Verdana, system-ui, sans-serif !important;
 }

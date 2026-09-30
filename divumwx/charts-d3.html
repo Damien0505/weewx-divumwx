@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="header.css?v=s3n2026k">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
   document.documentElement.dataset.embed = (new URL(location.href).searchParams.get('embed') === '1') ? '1' : '0';
@@ -56,7 +55,7 @@
   --bs-link-color:#B45309;
   --bs-link-hover-color:#D3A94C;
   --bs-warning-rgb:180,83,9;
-  --bs-font-sans-serif:'Lexend', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --bs-font-sans-serif:Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 [data-bs-theme="dark"]{
   --bw-instrument-headspace:#222A2E;
@@ -113,7 +112,7 @@ body{
   padding-bottom:48px;
   transition:background-color .25s ease, color .25s ease;
 }
-.font-mono{font-family:'Lexend', system-ui, sans-serif;}
+.font-mono{font-family:Verdana, system-ui, sans-serif;}
 .card{background:var(--bs-card-bg); border-radius:var(--bw-radius-sm); box-shadow:var(--bw-shadow);}
 
 body.season-winter { --bs-card-bg: #e9f2ec; }
@@ -133,7 +132,7 @@ body.season-autumn { --bs-card-bg: #f2e6d8; }
 
 .records-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
 .records-tab{
-  font-family:'Lexend', system-ui, sans-serif;font-size:13px;font-weight:600;
+  font-family:Verdana, system-ui, sans-serif;font-size:13px;font-weight:600;
   padding:9px 18px;border-radius:999px;border:1px solid var(--bs-border-color);
   background-color:var(--bs-tertiary-bg);color:var(--bs-body-color);
   cursor:pointer;transition:.15s;
@@ -144,7 +143,7 @@ body.season-autumn { --bs-card-bg: #f2e6d8; }
 .chart-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;}
 .chart-timeframes{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
 .chart-tf-btn{
-  font-family:'Lexend', system-ui, sans-serif;font-size:12.5px;font-weight:600;
+  font-family:Verdana, system-ui, sans-serif;font-size:12.5px;font-weight:600;
   padding:7px 14px;border-radius:999px;border:1px solid var(--bs-border-color);
   background-color:var(--bs-tertiary-bg);color:var(--bs-body-color);
   cursor:pointer;transition:.15s;
@@ -152,7 +151,7 @@ body.season-autumn { --bs-card-bg: #f2e6d8; }
 .chart-tf-btn:hover{border-color:var(--bw-accent);}
 .chart-tf-btn.active{background-color:var(--bw-accent);color:#1B1407;border-color:var(--bw-accent);}
 .chart-hist-select{
-  font-family:'Lexend', system-ui, sans-serif;font-size:12.5px;font-weight:600;
+  font-family:Verdana, system-ui, sans-serif;font-size:12.5px;font-weight:600;
   background-color:var(--bs-tertiary-bg);color:var(--bs-body-color);border:1px solid var(--bs-border-color);
   border-radius:999px;padding:7px 14px;
 }
@@ -193,8 +192,8 @@ body.season-autumn { --bs-card-bg: #f2e6d8; }
 }
 .records-grid{display:flex;flex-direction:column;gap:16px;}
 .records-label{font-size:12.5px;color:var(--bs-secondary-color);margin-bottom:3px;}
-.records-value{font-size:20px;font-weight:600;font-family:'Lexend', system-ui, sans-serif;line-height:1.15;}
-.records-value-date{font-size:11px;color:var(--bs-secondary-color);font-family:'Lexend', system-ui, sans-serif;margin-top:2px;}
+.records-value{font-size:20px;font-weight:600;font-family:Verdana, system-ui, sans-serif;line-height:1.15;}
+.records-value-date{font-size:11px;color:var(--bs-secondary-color);font-family:Verdana, system-ui, sans-serif;margin-top:2px;}
 .records-section-title{font-size:20px;font-weight:700;margin:28px 0 14px;}
 
 @media (max-width:900px){
@@ -208,7 +207,7 @@ body.season-autumn { --bs-card-bg: #f2e6d8; }
   .records-periods-row{grid-template-columns:1fr;}
 }
 
-footer{font-size:12px;color:var(--bs-secondary-color);font-family:'Lexend', system-ui, sans-serif;}
+footer{font-size:12px;color:var(--bs-secondary-color);font-family:Verdana, system-ui, sans-serif;}
 
 .pollen-label{display:inline-flex;align-items:center;gap:6px;}
 .pollen-dot{width:12px;height:12px;border-radius:50%;display:inline-block;}
@@ -271,7 +270,7 @@ footer{font-size:12px;color:var(--bs-secondary-color);font-family:'Lexend', syst
 }
 .d3-hover-line{stroke:var(--bs-secondary-color);stroke-width:1;stroke-dasharray:3,3;pointer-events:none;}
 .d3-axis path,.d3-axis line{stroke:var(--bs-border-color);}
-.d3-axis text{fill:var(--bs-body-color);font-size:10.5px;font-family:'Lexend', system-ui, sans-serif;}
+.d3-axis text{fill:var(--bs-body-color);font-size:10.5px;font-family:Verdana, system-ui, sans-serif;}
 .d3-gridline line{stroke:var(--bs-border-color);stroke-opacity:.35;}
 .d3-gridline path{stroke:none;}
 .chart-container svg{width:100%;height:100%;display:block;overflow:visible;}
@@ -2031,7 +2030,7 @@ function drawRoseD3(containerId, roseData, isGust, dataReady, dirFieldMissing){
     g.append('circle').attr('r',r).attr('fill','none').attr('stroke',TC.ring).attr('stroke-width',0.8);
     const pct = Math.round((i/4) * (maxCount/total) * 100);
     g.append('text').attr('x',0).attr('y',-r-4).attr('text-anchor','middle')
-      .attr('font-size',9).attr('font-family',"'Lexend', system-ui, sans-serif").attr('fill',TC.ringTxt).text(pct + '%');
+      .attr('font-size',9).attr('font-family',"Verdana, system-ui, sans-serif").attr('fill',TC.ringTxt).text(pct + '%');
   }
   for(let i=0; i<16; i++){
     const a = (i/16) * 2 * Math.PI;
@@ -2068,7 +2067,7 @@ function drawRoseD3(containerId, roseData, isGust, dataReady, dirFieldMissing){
     const a = (i/8) * 2 * Math.PI;
     g.append('text').attr('x', Math.sin(a)*labR).attr('y', -Math.cos(a)*labR)
       .attr('text-anchor','middle').attr('dominant-baseline','middle')
-      .attr('font-family',"'Lexend', system-ui, sans-serif")
+      .attr('font-family',"Verdana, system-ui, sans-serif")
       .attr('font-size', lbl==='N' ? 13 : 11).attr('font-weight', lbl==='N' ? 'bold' : 'normal')
       .attr('fill', lbl==='N' ? (isGust?'#D3A94C':'#FF6B6B') : TC.cardTxt)
       .text(DivumWXI18N.t(lbl));

@@ -11,7 +11,6 @@
 <meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Meeus Live</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -43,7 +42,7 @@ html[data-season="summer"] body, html[data-season="autumn"] body {
 </style>
 </head>
 <body>
-<div style="position:relative; top:10px;display:flex;justify-content:center;align-items:center;font-family:'Lexend', system-ui, sans-serif;">
+<div style="position:relative; top:10px;display:flex;justify-content:center;align-items:center;font-family:Verdana, system-ui, sans-serif;">
 </div>
 <style>
 :root {
@@ -60,7 +59,7 @@ html, body { margin: 0; padding: 0; overflow: hidden; }
 
 #meeusStage{ position:relative; width:1160px; }
 .meeus{display:flex;justify-content:center;align-items:center;margin-top:20px;margin-left:0px;}
-.axis text{fill:var(--meeus-text-color);font-family:'Lexend', system-ui, sans-serif;font-size:7.5px;}
+.axis text{fill:var(--meeus-text-color);font-family:Verdana, system-ui, sans-serif;font-size:7.5px;}
 .axis path{stroke:var(--meeus-axis-path-color);stroke-width:1;fill:none;}
 .axis line{stroke:var(--meeus-axis-path-color);stroke-width:1;fill:none;}
 .horiz.line{stroke:#007fff;stroke-width:1;fill:none;}
@@ -1236,7 +1235,7 @@ var zenith = "Zenith";
     .attr("x", 307.5)
     .attr("y", 5)
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "normal")
     .text(zenith);
@@ -1247,7 +1246,7 @@ var horizon = "Horizon";
     .attr("x", 30)
     .attr("y", 148)
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "normal")
     .text(horizon);
@@ -1256,7 +1255,7 @@ var tooltips = d3.select(".meeus")
     .append("div")
     .style("position", "absolute")
     .style("visibility", "hidden")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("color", "tomato")
     .style("font-size", "7.5px")
     .style("background-color", "#292e35")
@@ -1288,7 +1287,7 @@ var tooltipm = d3.select(".meeus")
     .append("div")
     .style("position", "absolute")
     .style("visibility", "hidden")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("color", "silver")
     .style("font-size", "7.5px")
     .style("background-color", "#292e35")
@@ -1326,7 +1325,7 @@ var loc = "Δ Location: ";
   svg
     .append("text")
     .style("fill", "#2e8b57")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 25)
@@ -1337,7 +1336,7 @@ var city = "Station: " + (__meta.station_location || '\u2014');
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 17)
@@ -1347,7 +1346,7 @@ var tzone = "Timezone: " + TZ;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 25)
@@ -1357,7 +1356,7 @@ var lat = "Latitude: " + latitude + "°";
   svg
     .append("text")
     .style("fill", "#2e8b57")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 25)
@@ -1368,7 +1367,7 @@ var lon = "Longitude: " + longitude + "°";
   svg
     .append("text")
     .style("fill", "#2e8b57")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 25)
@@ -1379,7 +1378,7 @@ var time = "Time | Date:";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 25)
@@ -1390,7 +1389,7 @@ var utcdate = "UTC - Date: " + dayCurrent + "." + monthCurrent + "." + yearCurre
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 61)
@@ -1400,7 +1399,7 @@ var utctime = "UTC - Time: " + skynet(hourCurrent) + ":" + skynet(minuteCurrent)
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 70)
@@ -1410,7 +1409,7 @@ var tzoffset = "Timezone Offset: " + timezoneOffset;
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 79)
@@ -1420,7 +1419,7 @@ var utcstring = "UTC - String: " + UTCString;
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 88)
@@ -1430,7 +1429,7 @@ var decimaldate = "Decimal - Date: " + dayJulian + "-" + monthJulian+ "-" + year
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 97)
@@ -1440,7 +1439,7 @@ var juliandecimaldate = "Julian Decimal Date: " + JD;
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 106)
@@ -1450,7 +1449,7 @@ var adoptedepoch = "Adopted Epoch: " + epochDays;
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 115)
@@ -1460,7 +1459,7 @@ var dayssinceepoch = "Days Since Epoch: " + daysSinceEpoch;
 svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 124)
@@ -1470,7 +1469,7 @@ var utdecimal = "UT - Decimal: " + UTDecimal;
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 133)
@@ -1480,7 +1479,7 @@ var jdAt0h = "JDAt0h: " + JDAt0h;
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 142)
@@ -1490,7 +1489,7 @@ var valuet = "T: " + valueT;
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 151)
@@ -1500,7 +1499,7 @@ var valuet0 = "T0: " + valueT0;
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 160)
@@ -1510,7 +1509,7 @@ var gst = "GMST: " + GST + "°";
   svg
     .append('text')
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 169)
@@ -1520,7 +1519,7 @@ var gsttime = "GMST - Time: " + GSTHours + "h" + " " + GSTMinutes + "m" + " " + 
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 178)
@@ -1530,7 +1529,7 @@ var horizoncoordinates = "Horizon Coordinates:";
   svg
     .append("text")
     .style("fill", "#007fff")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 25)
@@ -1541,7 +1540,7 @@ var lst = "LMST: " + LST + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 204)
@@ -1551,7 +1550,7 @@ var lsttime = "LMST - Time: " + LSTHours + "h" + " " + LSTMinutes + "m" + " " + 
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 213)
@@ -1561,7 +1560,7 @@ var h = "Hα: " + hourAngle + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 222)
@@ -1571,7 +1570,7 @@ var htime = "Hα-time: " + HHours + "h" + " " + HMinutes + "m" + " " + HSeconds 
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 25)
     .attr("y", 231)
@@ -1581,7 +1580,7 @@ var sunposition = "Sun Position: ";
   svg
     .append("text")
     .style("fill", "tomato")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 236.5)
@@ -1592,7 +1591,7 @@ var valuen = "N: " + valueN + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 17)
@@ -1602,7 +1601,7 @@ var msun = "MSun: " + MSun + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 26)
@@ -1612,7 +1611,7 @@ var maxe = "Ec: " + Ec + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 35)
@@ -1622,7 +1621,7 @@ var ra = "Ra λSun: " + toDegrees(Ra) + "°";
   svg
     .append("text")
     .style("fill", "#007fff")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 236.5)
@@ -1633,7 +1632,7 @@ var esun = "εEcliptic Angle: " + εSun + "°";
   svg
     .append("text")
     .style("fill", "tomato")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 236.5)
@@ -1644,7 +1643,7 @@ var sunDec = "Dec δSun: " + δSun + "°";
   svg
     .append("text")
     .style("fill", "#007fff")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 236.5)
@@ -1655,7 +1654,7 @@ var ysun = "YSun: " + YSun;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 71)
@@ -1665,7 +1664,7 @@ var xsun = "XSun: " + XSun;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 80)
@@ -1675,7 +1674,7 @@ var loquadrant = "LO-Quadrant: " + LOQuadrant + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 89)
@@ -1685,7 +1684,7 @@ var hiquadrant = "HI-Quadrant: " + HIQuadrant + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 98)
@@ -1695,7 +1694,7 @@ var asun = "αSun: " + αSun + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 107)
@@ -1705,7 +1704,7 @@ var asuntime = "αSun - Time: " + αSunHours + "h" + " " + αSunMinutes + "m" + 
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 116)
@@ -1715,7 +1714,7 @@ var asuntime = "δSun - Time: " + δSunHours + "h" + " " + δSunMinutes + "m" + 
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 125)
@@ -1725,7 +1724,7 @@ var sunazimuth = "Sun Azimuth (Decimal): " + sunazi + "°";
   svg
     .append("text")
     .style("fill", "tomato")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 236.5)
@@ -1736,7 +1735,7 @@ var sunaltitude = "Sun Altitude (Decimal): " + sunalt + "°";
   svg
     .append("text")
     .style("fill", "tomato")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 236.5)
@@ -1747,7 +1746,7 @@ var sunazimuthdeg = "Sun Azimuth (Dms): " + SHours + "°" + SMinutes + "'" + SSe
   svg
     .append("text")
     .style("fill", "tomato")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 152)
@@ -1757,7 +1756,7 @@ var sunaltitudedeg = "Sun Altitude (Dms): " + sHours + "°" + sMinutes + "'" + s
   svg
     .append("text")
     .style("fill", "tomato")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 161)
@@ -1767,7 +1766,7 @@ var sundistance = "Sun Distance: " + d3.format(",.3f")(Rs) + " km";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 170)
@@ -1777,7 +1776,7 @@ var sundistance = "Sun Distance: " + d3.format(",.3f")(Rs) + " km";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 448)
@@ -1788,7 +1787,7 @@ var lmoon = "lMoon: " + lMoon + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 17)
@@ -1798,7 +1797,7 @@ var mm = "Mm: " + Mm + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 26)
@@ -1808,7 +1807,7 @@ var nmoon = "NMoon: " + NMoon + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 35)
@@ -1818,7 +1817,7 @@ var ev = "Ev: " + Ev;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 44)
@@ -1828,7 +1827,7 @@ var ae = "Ae: " + Ae;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 53)
@@ -1838,7 +1837,7 @@ var a3 = "A3: " + A3;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 62)
@@ -1848,7 +1847,7 @@ var mmx = "M'm: " + MPrimem + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 71)
@@ -1858,7 +1857,7 @@ var ecx = "Ec: " + Ec + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 80)
@@ -1868,7 +1867,7 @@ var a4 = "A4: " + A4;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 89)
@@ -1878,7 +1877,7 @@ var lp = "lPrime: " + lPrime + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 98)
@@ -1888,7 +1887,7 @@ var np = "NPrime: " + NPrime + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 107)
@@ -1898,7 +1897,7 @@ var ramoon = "Ra λMoon: " + λMoon + "°";
   svg
     .append("text")
     .style("fill", "#007fff")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 448)
@@ -1909,7 +1908,7 @@ var bmoon = "βMoon: " + βMoon + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 125)
@@ -1919,7 +1918,7 @@ var decmoon = "Dec δMoon: " + δMoon + "°";
   svg
     .append("text")
     .style("fill", "#007fff")
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 448)
@@ -1930,7 +1929,7 @@ var valueymoon = "YMoon: " + valueYMoon;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 143)
@@ -1940,7 +1939,7 @@ var valuexmoon = "XMoon: " + valueXMoon;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 152)
@@ -1950,7 +1949,7 @@ var loquadrantMn = "LO-Quadrant: " + LOQuadrantMn + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 161)
@@ -1960,7 +1959,7 @@ var hiquadrantMn = "HI-Quadrant: " + HIQuadrantMn + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 170)
@@ -1970,7 +1969,7 @@ var amoon = "αMoon: " + αMoon + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 179)
@@ -1980,7 +1979,7 @@ var amoontime = "αMoon - Time: " + αMoonHours + "h" + " " + αMoonMinutes + "m
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 188)
@@ -1990,7 +1989,7 @@ var decmoontime = "δMoon - Time: " + δMoonHours + "h" + " " + δMoonMinutes + 
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 197)
@@ -2000,7 +1999,7 @@ var moonazimuth = "Moon Azimuth (Decimal): " + moonazi + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 448)
@@ -2011,7 +2010,7 @@ var moonaltitude = "Moon Altitude (Decimal): "  + moonalt + "°";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 448)
@@ -2022,7 +2021,7 @@ var moonazimuthdeg = "Moon Azimuth (Dms): " + AHours + "º" + AMinutes + "'" + A
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 224)
@@ -2032,7 +2031,7 @@ var moonaltitudedeg = "Moon Altitude (Dms): " + aHours + "º" + aMinutes + "'" +
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 448)
     .attr("y", 233)
@@ -2042,7 +2041,7 @@ var moonp = "Moonphase:";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .style("font-weight", "bold")
     .attr("x", 236.5)
@@ -2053,7 +2052,7 @@ var moondistance = "Moon Distance: " + d3.format(",.3f")(Rm) + " km";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 196)
@@ -2063,7 +2062,7 @@ var mdays = "Moon Age: " + m_days + " Days";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 205)
@@ -2073,7 +2072,7 @@ var frac = "Illumination: " + perc + " %";
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 214)
@@ -2083,7 +2082,7 @@ var mphase = "Moonphase: " + moonphase;
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 223)
@@ -2093,7 +2092,7 @@ var mphaseA = ["Moonphase Angle: " + MphaseAngle + "°"];
   svg
     .append("text")
     .style("fill", tcolor)
-    .style("font-family", "'Lexend', system-ui, sans-serif")
+    .style("font-family", "Verdana, system-ui, sans-serif")
     .style("font-size", "7.5px")
     .attr("x", 236.5)
     .attr("y", 232)

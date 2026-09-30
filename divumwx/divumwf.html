@@ -22,7 +22,6 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===================== Shared palette (identical to locationforecast.html / index.html) ===================== */
 :root,
@@ -57,7 +56,7 @@
   --bs-link-color:#B45309;
   --bs-link-hover-color:#F2BC6B;
   --bs-warning-rgb:180,83,9;
-  --bs-font-sans-serif:'Lexend', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --bs-font-sans-serif:Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 [data-bs-theme="dark"]{
   --bw-accent:#D3A94C;
@@ -93,7 +92,7 @@ body{
   padding-bottom:48px;
   transition:background-color .25s ease, color .25s ease;
 }
-.font-mono{font-family:'Lexend', system-ui, sans-serif;}
+.font-mono{font-family:Verdana, system-ui, sans-serif;}
 .card{background:var(--bs-card-bg); border-radius:var(--bw-radius-sm); box-shadow:var(--bw-shadow);}
 .shadow-card{box-shadow:var(--bw-shadow) !important;}
 .nav-btn{color:var(--bs-body-color);border-color:var(--bs-body-color);background-color:var(--bs-tertiary-bg);font-weight:600;font-size:15px;white-space:nowrap;}
@@ -107,10 +106,10 @@ body{
 .wf-appbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;}
 .wf-brand{display:flex;align-items:baseline;gap:8px;min-width:0;}
 .wf-brand-name{
-  font-family:'Lexend', system-ui, sans-serif;font-weight:700;font-size:1.7rem;
+  font-family:Verdana, system-ui, sans-serif;font-weight:700;font-size:1.7rem;
   color:var(--bw-accent);letter-spacing:.01em;white-space:nowrap;
 }
-.wf-brand-version{font-size:11.5px;color:var(--bs-secondary-color);font-family:'Lexend', system-ui, sans-serif;white-space:nowrap;}
+.wf-brand-version{font-size:11.5px;color:var(--bs-secondary-color);font-family:Verdana, system-ui, sans-serif;white-space:nowrap;}
 .wf-tagline{font-size:12.5px;color:var(--bs-secondary-color);margin:0 0 14px;}
 .wf-gear-btn{
   flex:0 0 auto;width:38px;height:38px;border-radius:50%;border:none;background:transparent;
@@ -159,13 +158,13 @@ body{
 .wf-suggestion-item:last-child{border-bottom:none;}
 .wf-suggestion-item:hover{background:var(--bs-secondary-bg);color:var(--bw-accent);}
 .wf-suggestion-name{font-weight:600;}
-.wf-suggestion-country{font-size:11.5px;color:var(--bs-secondary-color);font-family:'Lexend', system-ui, sans-serif;flex-shrink:0;}
+.wf-suggestion-country{font-size:11.5px;color:var(--bs-secondary-color);font-family:Verdana, system-ui, sans-serif;flex-shrink:0;}
 .wf-status{font-size:12.5px;color:var(--bs-secondary-color);min-height:1.3em;margin:6px 6px 10px;}
 .wf-status.is-error{color:var(--bw-danger);}
 .wf-status.is-busy::before{content:'\23F3 ';}
 .wf-recent{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
 .wf-recent-chip{
-  font-family:'Lexend', system-ui, sans-serif;font-size:11.5px;padding:5px 12px;border-radius:16px;
+  font-family:Verdana, system-ui, sans-serif;font-size:11.5px;padding:5px 12px;border-radius:16px;
   border:1px solid var(--bs-border-color);background:var(--bs-tertiary-bg);color:var(--bs-secondary-color);
 }
 .wf-recent-chip:hover{border-color:var(--bw-accent);color:var(--bw-accent);}
@@ -196,7 +195,7 @@ body{
 .wf-theme-btn:hover{border-color:var(--bw-accent);}
 .wf-settings-row--stacked{flex-direction:column;align-items:stretch;gap:6px;}
 .wf-settings-input{
-  width:100%;box-sizing:border-box;font-family:'Lexend', system-ui, sans-serif;font-size:16px;
+  width:100%;box-sizing:border-box;font-family:Verdana, system-ui, sans-serif;font-size:16px;
   padding:7px 10px;border-radius:6px;border:1px solid var(--bs-border-color);
   background:var(--bs-secondary-bg);color:var(--bs-body-color);
 }
@@ -213,7 +212,7 @@ body{
 .hero-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
 .hero-place{min-width:0;}
 .hero-place-name{font-weight:700;font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.hero-place-sub{font-size:11.5px;color:var(--bs-secondary-color);font-family:'Lexend', system-ui, sans-serif;}
+.hero-place-sub{font-size:11.5px;color:var(--bs-secondary-color);font-family:Verdana, system-ui, sans-serif;}
 .wf-refresh-btn{
   flex:0 0 auto;background:none;border:none;color:var(--bs-secondary-color);font-size:16px;cursor:pointer;
   padding:4px;line-height:1;
@@ -231,10 +230,10 @@ body{
 .hero-mini-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--bs-border-color);}
 .hero-mini{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;}
 .hero-mini-label{font-size:10.5px;color:var(--bs-secondary-color);text-transform:uppercase;letter-spacing:.03em;}
-.hero-mini-value{font-size:15px;font-weight:700;font-family:'Lexend', system-ui, sans-serif;}
+.hero-mini-value{font-size:15px;font-weight:700;font-family:Verdana, system-ui, sans-serif;}
 .hero-mini-sub{font-size:10.5px;color:var(--bs-secondary-color);}
 
-.beaufort-chip{display:inline-block;margin-top:4px;font-family:'Lexend', system-ui, sans-serif;font-size:10.5px;background:var(--bw-sky-soft);color:var(--bw-sky);padding:2px 8px;border-radius:10px;}
+.beaufort-chip{display:inline-block;margin-top:4px;font-family:Verdana, system-ui, sans-serif;font-size:10.5px;background:var(--bw-sky-soft);color:var(--bw-sky);padding:2px 8px;border-radius:10px;}
 
 /* ---------- Minutely rain forecast ---------- */
 .minutely-card{padding:16px 18px 14px;}
@@ -242,17 +241,17 @@ body{
 .minutely-bar{flex:1 1 0;min-width:2px;border-radius:2px 2px 0 0;}
 .minutely-xaxis{
   display:flex;justify-content:space-between;font-size:11px;color:var(--bw-sky);
-  font-family:'Lexend', system-ui, sans-serif;margin-top:6px;
+  font-family:Verdana, system-ui, sans-serif;margin-top:6px;
 }
 .minutely-source{font-size:10px;color:var(--bs-secondary-color);margin-top:10px;text-align:right;}
 
 /* ---------- 24-hour meteogram ---------- */
 .meteogram-card{padding:14px 8px 10px;}
 .meteogram-svg{width:100%;height:auto;display:block;}
-.meteogram-hourlabel{font-size:11px;fill:var(--bs-secondary-color);font-family:'Lexend', system-ui, sans-serif;}
+.meteogram-hourlabel{font-size:11px;fill:var(--bs-secondary-color);font-family:Verdana, system-ui, sans-serif;}
 .meteogram-hourlabel--now{fill:var(--bw-accent);font-weight:700;}
-.meteogram-daylabel{font-size:10px;fill:var(--bw-accent);font-weight:700;font-family:'Lexend', system-ui, sans-serif;}
-.meteogram-templabel{font-size:11px;font-weight:700;font-family:'Lexend', system-ui, sans-serif;}
+.meteogram-daylabel{font-size:10px;fill:var(--bw-accent);font-weight:700;font-family:Verdana, system-ui, sans-serif;}
+.meteogram-templabel{font-size:11px;font-weight:700;font-family:Verdana, system-ui, sans-serif;}
 
 /* ---------- Highlights (UV / AQI / Sun&Moon / Precip) ---------- */
 .section-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--bs-secondary-color);margin:22px 0 10px;display:flex;align-items:center;gap:10px;}
@@ -272,7 +271,7 @@ body{
 .aqi-pill--high,.uv-pill--high{background:rgba(227,107,87,.15);color:var(--bw-danger);}
 .sunmoon-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:3px 0;}
 .sunmoon-row .k{display:flex;align-items:center;gap:6px;color:var(--bs-secondary-color);}
-.sunmoon-row .v{font-family:'Lexend', system-ui, sans-serif;font-weight:600;}
+.sunmoon-row .v{font-family:Verdana, system-ui, sans-serif;font-weight:600;}
 .moon-emoji{display:inline-flex;align-items:center;color:var(--bs-secondary-color);}
 .daylight-bar{height:4px;border-radius:2px;background:var(--bs-border-color);margin:8px 0 2px;overflow:hidden;position:relative;}
 .daylight-bar-fill{position:absolute;left:0;top:0;bottom:0;background:var(--bw-accent);border-radius:2px;}
@@ -289,7 +288,7 @@ body{
 .day-card.active .dname{color:var(--bw-accent);}
 .day-card .dicon{width:32px;height:32px;margin:8px auto 4px;display:block;object-fit:contain;}
 .day-card .drain{font-size:10px;color:var(--bw-sky);height:14px;display:flex;align-items:center;justify-content:center;gap:2px;}
-.day-card .dtemps{font-family:'Lexend', system-ui, sans-serif;font-size:13px;margin-top:2px;}
+.day-card .dtemps{font-family:Verdana, system-ui, sans-serif;font-size:13px;margin-top:2px;}
 .day-card .dtemps .lo{color:var(--bs-secondary-color);}
 
 /* ---------- Hourly ---------- */
@@ -299,13 +298,13 @@ body{
 .hourly-title span{font-size:11px;color:var(--bs-secondary-color);}
 .hourly-scroll{display:flex;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative;}
 .hcell{flex:0 0 auto;width:52px;text-align:center;font-size:11.5px;padding:2px 0;}
-.hcell .htime{color:var(--bs-secondary-color);font-family:'Lexend', system-ui, sans-serif;font-size:10.5px;}
+.hcell .htime{color:var(--bs-secondary-color);font-family:Verdana, system-ui, sans-serif;font-size:10.5px;}
 .hcell img.hicon{width:26px;height:26px;display:block;margin:6px auto 4px;object-fit:contain;}
-.hcell .htemp{font-family:'Lexend', system-ui, sans-serif;font-weight:600;}
-.hcell .hrain{color:var(--bw-sky);font-size:10px;font-family:'Lexend', system-ui, sans-serif;min-height:13px;}
+.hcell .htemp{font-family:Verdana, system-ui, sans-serif;font-weight:600;}
+.hcell .hrain{color:var(--bw-sky);font-size:10px;font-family:Verdana, system-ui, sans-serif;min-height:13px;}
 .wind-badge{position:relative;width:36px;height:36px;margin:4px auto 0;display:flex;align-items:center;justify-content:center;}
 .wind-badge-ring{position:absolute;inset:0;width:100%;height:100%;}
-.wind-badge-value{position:relative;font-family:'Lexend', system-ui, sans-serif;font-size:8.5px;font-weight:700;color:var(--wind-col, var(--bs-secondary-color));}
+.wind-badge-value{position:relative;font-family:Verdana, system-ui, sans-serif;font-size:8.5px;font-weight:700;color:var(--wind-col, var(--bs-secondary-color));}
 
 /* ---------- Icon contrast (mirrors locationforecast.html) ---------- */
 [data-bs-theme="light"] .hero-icon,[data-bs-theme="light"] .dicon,[data-bs-theme="light"] .hicon{

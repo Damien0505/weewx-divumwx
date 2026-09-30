@@ -14,7 +14,6 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap');
 
 :root,
 [data-bs-theme="light"]{
@@ -32,7 +31,7 @@
   --bs-secondary-bg: #FFFFFF;
   --bs-border-color: #C9CFD8;
   --bs-card-bg: #FFFFFF;
-  --bs-font-sans-serif:'Lexend', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --bs-font-sans-serif:Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 [data-bs-theme="dark"]{
   --bw-accent:#D3A94C;
@@ -73,7 +72,7 @@ body{
 .day-card .dname{font-size:12.5px;font-weight:700;color:var(--bs-secondary-color);text-transform:uppercase;letter-spacing:.03em;}
 .day-card .dicon{width:38px;height:38px;margin:8px auto 4px;display:block;object-fit:contain;}
 .day-card .dcond{font-size:11.5px;color:var(--bs-secondary-color);height:28px;display:flex;align-items:center;justify-content:center;}
-.day-card .dtemps{font-family:'Lexend', system-ui, sans-serif;font-size:14px;margin-top:4px;}
+.day-card .dtemps{font-family:Verdana, system-ui, sans-serif;font-size:14px;margin-top:4px;}
 .day-card .dtemps .lo{color:var(--bs-secondary-color);}
 .day-card.active{background:var(--bs-tertiary-bg);}
 
@@ -107,8 +106,8 @@ table.hourly .track-marker{
   transition:top .4s ease;
 }
 table.hourly .track-marker img.hicon{margin-bottom:2px;}
-table.hourly .temp-cell{font-family:'Lexend', system-ui, sans-serif;font-weight:600;}
-table.hourly .rain-cell{color:var(--bw-sky);font-family:'Lexend', system-ui, sans-serif;font-size:12px;}
+table.hourly .temp-cell{font-family:Verdana, system-ui, sans-serif;font-weight:600;}
+table.hourly .rain-cell{color:var(--bw-sky);font-family:Verdana, system-ui, sans-serif;font-size:12px;}
 
 /* ---------- Meteocons contrast filter, light theme only ---------- */
 [data-bs-theme="light"] .dicon,
@@ -131,7 +130,7 @@ table.hourly .rain-cell{color:var(--bw-sky);font-family:'Lexend', system-ui, san
 
 .wind-badge{ position:relative; width:44px; height:44px; margin:0 auto; display:flex; align-items:center; justify-content:center; }
 .wind-badge-ring{ position:absolute; inset:0; width:100%; height:100%; transition:transform .4s ease; }
-.wind-badge-value{ position:relative; font-family:'Lexend', system-ui, sans-serif; font-size:9.5px; font-weight:700; color:var(--wind-col, var(--bs-secondary-color)); }
+.wind-badge-value{ position:relative; font-family:Verdana, system-ui, sans-serif; font-size:9.5px; font-weight:700; color:var(--wind-col, var(--bs-secondary-color)); }
 
 .live-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--bs-secondary-color); margin-right:6px; }
 </style>

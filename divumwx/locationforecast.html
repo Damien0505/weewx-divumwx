@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="header.css?v=s3n2026k">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===================== Shared palette/components (from index.html's <head>) ===================== */
 :root,
@@ -52,7 +51,7 @@
   --bs-link-color:#B45309;
   --bs-link-hover-color:#F2BC6B;
   --bs-warning-rgb:180,83,9;
-  --bs-font-sans-serif:'Lexend', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --bs-font-sans-serif:Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 [data-bs-theme="dark"]{
   --bw-instrument-headspace:#222A2E;
@@ -91,7 +90,7 @@ body{
   padding-bottom:48px;
   transition:background-color .25s ease, color .25s ease;
 }
-.font-mono{font-family:'Lexend', system-ui, sans-serif;}
+.font-mono{font-family:Verdana, system-ui, sans-serif;}
 .card{background:var(--bs-card-bg); border-radius:var(--bw-radius-sm); box-shadow:var(--bw-shadow);}
 
 .shadow-card{box-shadow:var(--bw-shadow) !important;}
@@ -150,10 +149,10 @@ body{
 .cc-stats-row{border-top:1px solid var(--bs-border-color);}
 .cc-stat{display:flex;flex-direction:column;gap:2px;}
 .cc-stat-label{font-size:11.5px;color:var(--bs-secondary-color);text-transform:uppercase;letter-spacing:.03em;}
-.cc-stat-value{font-size:18px;font-weight:700;font-family:'Lexend', system-ui, sans-serif;}
+.cc-stat-value{font-size:18px;font-weight:700;font-family:Verdana, system-ui, sans-serif;}
 .cc-mini{display:flex;flex-direction:column;justify-content:center;}
 .cc-mini-label{font-size:12px;color:var(--bs-secondary-color);margin-bottom:4px;}
-.cc-mini-value{font-size:20px;font-weight:700;font-family:'Lexend', system-ui, sans-serif;}
+.cc-mini-value{font-size:20px;font-weight:700;font-family:Verdana, system-ui, sans-serif;}
 .cc-mini-sub{font-size:11.5px;color:var(--bs-secondary-color);margin-top:2px;}
 .cc-mini-sub b{color:var(--bs-body-color);font-weight:600;}
 .cc-wind .cc-stat-value{font-size:16px;}
@@ -172,7 +171,7 @@ body{
 .uv-pill--mod{background:rgba(214,190,78,.15);color:var(--bw-yellow);}
 .uv-pill--high{background:rgba(227,107,87,.15);color:var(--bw-danger);}
 .hero-suntimes{border-top:1px solid var(--bs-border-color);}
-.hero-suntime{display:inline-flex;align-items:center;gap:6px;font-family:'Lexend', system-ui, sans-serif;font-size:13.5px;color:var(--bs-body-color);}
+.hero-suntime{display:inline-flex;align-items:center;gap:6px;font-family:Verdana, system-ui, sans-serif;font-size:13.5px;color:var(--bs-body-color);}
 .hero-suntime-icon{display:inline-flex;line-height:0;flex-shrink:0;}
 .hero-suntime-icon--sun-rise,.hero-suntime-icon--sun-set{color:var(--bw-accent);}
 .hero-suntime-icon--moon{color:var(--bs-secondary-color);}
@@ -186,7 +185,7 @@ body{
 }
 .wind-compass-mini-label{
   position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  font-family:'Lexend', system-ui, sans-serif;line-height:1.15;pointer-events:none;
+  font-family:Verdana, system-ui, sans-serif;line-height:1.15;pointer-events:none;
 }
 .wind-compass-mini-label span:first-child{font-size:13px;font-weight:700;}
 .wind-compass-mini-label span:last-child{font-size:9.5px;color:var(--bs-secondary-color);}
@@ -232,7 +231,7 @@ body{
 .day-card .dname{font-size:12.5px;font-weight:700;color:var(--bs-secondary-color);text-transform:uppercase;letter-spacing:.03em;}
 .day-card .dicon{width:38px;height:38px;margin:8px auto 4px;display:block;object-fit:contain;}
 .day-card .dcond{font-size:11.5px;color:var(--bs-secondary-color);height:28px;display:flex;align-items:center;justify-content:center;}
-.day-card .dtemps{font-family:'Lexend', system-ui, sans-serif;font-size:14px;margin-top:4px;}
+.day-card .dtemps{font-family:Verdana, system-ui, sans-serif;font-size:14px;margin-top:4px;}
 .day-card .dtemps .lo{color:var(--bs-secondary-color);}
 .day-card .dwarn{position:absolute;top:6px;right:6px;display:block;}
 .day-card.active{background:var(--bs-tertiary-bg);}
@@ -252,7 +251,7 @@ body{
 .metric-card .mvalue{font-size:26px;font-weight:700;}
 .metric-card .mvalue small{font-size:13px;color:var(--bs-secondary-color);font-weight:400;}
 .metric-card .msub{font-size:12.5px;color:var(--bs-secondary-color);margin-top:4px;}
-.beaufort-chip{display:inline-block;margin-top:6px;font-family:'Lexend', system-ui, sans-serif;font-size:11px;background:var(--bw-sky-soft);color:var(--bw-sky);padding:2px 8px;border-radius:10px;}
+.beaufort-chip{display:inline-block;margin-top:6px;font-family:Verdana, system-ui, sans-serif;font-size:11px;background:var(--bw-sky-soft);color:var(--bw-sky);padding:2px 8px;border-radius:10px;}
 .mlabel-icon{width:14px;height:14px;object-fit:contain;}
 
 /* ---------- Temperature feature card (Today's Observations) ---------- */
@@ -269,7 +268,7 @@ body{
 .obs-subcol-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--bs-secondary-color);margin-bottom:8px;}
 .obs-stat-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;padding:3px 0;gap:8px;}
 .obs-stat-row .obs-stat-label{color:var(--bs-secondary-color);}
-.obs-stat-row .obs-stat-value{font-family:'Lexend', system-ui, sans-serif;font-weight:600;text-align:right;}
+.obs-stat-row .obs-stat-value{font-family:Verdana, system-ui, sans-serif;font-weight:600;text-align:right;}
 .obs-stat-time{font-size:10.5px;color:var(--bs-secondary-color);font-weight:400;margin-left:4px;}
 .obs-trend-rising{color:#E8826F;}
 .obs-trend-falling{color:var(--bw-sky);}
@@ -320,7 +319,7 @@ table.hourly .track-marker img.hicon{margin-bottom:2px;}
 }
 .wind-badge-value{
   position:relative;
-  font-family:'Lexend', system-ui, sans-serif;
+  font-family:Verdana, system-ui, sans-serif;
   font-size:9.5px;font-weight:700;
   color:var(--wind-col, var(--bs-secondary-color));
 }
@@ -347,8 +346,8 @@ table.hourly .track-marker img.hicon{margin-bottom:2px;}
     drop-shadow(0 0 2px rgba(255,255,255,.32))
     drop-shadow(0 0 8px rgba(255,255,255,.18));
 }
-table.hourly .temp-cell{font-family:'Lexend', system-ui, sans-serif;font-weight:600;}
-table.hourly .rain-cell{color:var(--bw-sky);font-family:'Lexend', system-ui, sans-serif;font-size:12px;}
+table.hourly .temp-cell{font-family:Verdana, system-ui, sans-serif;font-weight:600;}
+table.hourly .rain-cell{color:var(--bw-sky);font-family:Verdana, system-ui, sans-serif;font-size:12px;}
 
 /* ---------- Sun/pollen/aq strip ---------- */
 .strip-card .slabel{font-size:12px;color:var(--bs-secondary-color);margin-bottom:10px;display:flex;justify-content:space-between;}
@@ -360,7 +359,7 @@ table.hourly .rain-cell{color:var(--bw-sky);font-family:'Lexend', system-ui, san
 .species-row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12.5px;}
 .species-row .species-name{color:var(--bs-secondary-color);display:flex;align-items:center;gap:6px;}
 .species-row .species-name .level-dot{width:7px;height:7px;flex:none;}
-.species-row .species-value{font-family:'Lexend', system-ui, sans-serif;font-weight:600;text-align:right;}
+.species-row .species-value{font-family:Verdana, system-ui, sans-serif;font-weight:600;text-align:right;}
 
 footer{font-size:12px;color:var(--bs-secondary-color);}
 
@@ -385,7 +384,7 @@ footer{font-size:12px;color:var(--bs-secondary-color);}
 .loc-search-card{max-width:900px;}
 .loc-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
 .loc-tab-btn{
-  font-family:'Lexend', system-ui, sans-serif;font-size:13px;font-weight:600;
+  font-family:Verdana, system-ui, sans-serif;font-size:13px;font-weight:600;
   padding:7px 14px;border-radius:20px;border:1px solid var(--bs-border-color);
   background:var(--bs-tertiary-bg);color:var(--bs-secondary-color);
 }
@@ -394,7 +393,7 @@ footer{font-size:12px;color:var(--bs-secondary-color);}
 .loc-tab-panel{display:none;}
 .loc-tab-panel.active{display:block;}
 .loc-field-row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;}
-.loc-field-row .form-control, .loc-field-row .form-label{font-family:'Lexend', system-ui, sans-serif;}
+.loc-field-row .form-control, .loc-field-row .form-label{font-family:Verdana, system-ui, sans-serif;}
 .loc-field-row label{font-size:11.5px;color:var(--bs-secondary-color);text-transform:uppercase;letter-spacing:.03em;display:block;margin-bottom:4px;}
 .loc-coord-field{width:160px;}
 .loc-hint{font-size:12px;color:var(--bs-secondary-color);margin-top:8px;}
@@ -409,9 +408,9 @@ footer{font-size:12px;color:var(--bs-secondary-color);}
 }
 .loc-suggestion-item:hover{border-color:var(--bw-accent);background:var(--bs-secondary-bg);}
 .loc-suggestion-name{font-weight:600;}
-.loc-suggestion-country{font-size:12px;color:var(--bs-secondary-color);font-family:'Lexend', system-ui, sans-serif;flex-shrink:0;}
+.loc-suggestion-country{font-size:12px;color:var(--bs-secondary-color);font-family:Verdana, system-ui, sans-serif;flex-shrink:0;}
 .loc-recent{font-size:12px;color:var(--bs-secondary-color);margin-top:10px;}
-.loc-recent button{font-family:'Lexend', system-ui, sans-serif;}
+.loc-recent button{font-family:Verdana, system-ui, sans-serif;}
 #locEmptyState p{font-size:15px;}
 </style>
 </head>
