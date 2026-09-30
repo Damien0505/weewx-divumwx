@@ -710,6 +710,30 @@ try {
   var ADVISORY_ZONE = 'unitedkingdom';
   var POLL_MS = 5 * 60 * 1000;
 
+  // ---- Alert dismiss (client-side, per-browser) -------------------------
+  var DISMISS_KEY = 'dashboardDismissedAlerts';
+  var DISMISS_MAX_AGE_MS = 45 * 24 * 60 * 60 * 1000;
+  function loadDismissed(){
+    try {
+      var obj = JSON.parse(localStorage.getItem(DISMISS_KEY) || '{}');
+      var now = Date.now();
+      var changed = false;
+      Object.keys(obj).forEach(function(k){
+        if (now - obj[k] > DISMISS_MAX_AGE_MS) { delete obj[k]; changed = true; }
+      });
+      if (changed) { try { localStorage.setItem(DISMISS_KEY, JSON.stringify(obj)); } catch (e) {} }
+      return obj;
+    } catch (e) { return {}; }
+  }
+  function saveDismissed(obj){
+    try { localStorage.setItem(DISMISS_KEY, JSON.stringify(obj)); } catch (e) {}
+  }
+  function alertHashKey(str){
+    var h = 0;
+    for (var i = 0; i < str.length; i++){ h = ((h << 5) - h + str.charCodeAt(i)) | 0; }
+    return 'a' + (h >>> 0).toString(36);
+  }
+
   var mount = document.getElementById('alertBarMount');
   if (!mount) return;
 
@@ -963,6 +987,23 @@ try {
     }
 
     section.appendChild(outer);
+
+    var dismissKey = alertHashKey((headlineHtml || '') + '|' + (descriptionHtml || ''));
+    section.dataset.dismissKey = dismissKey;
+    var dismissBtn = document.createElement('button');
+    dismissBtn.type = 'button';
+    dismissBtn.className = 'alert-dismiss';
+    dismissBtn.setAttribute('aria-label', DivumWXI18N.t('Dismiss'));
+    dismissBtn.innerHTML = '&times;';
+    dismissBtn.addEventListener('click', function(){
+      var d = loadDismissed();
+      d[dismissKey] = Date.now();
+      saveDismissed(d);
+      section.remove();
+      mount.classList.toggle('has-content', mount.children.length > 0);
+    });
+    section.appendChild(dismissBtn);
+
     return section;
   }
 
@@ -1118,6 +1159,8 @@ try {
         }));
       });
 
+      var dismissed = loadDismissed();
+      sections = sections.filter(function(s){ return !dismissed[s.dataset.dismissKey]; });
       render(sections);
     }).catch(function(e){
       console.warn('alertBar: refresh failed —', e.message);
