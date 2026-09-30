@@ -307,7 +307,7 @@ try {
 
   // ---- 60:40 content split (left: clock + time/date/uptime, right: outlook) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -328,7 +328,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -1375,7 +1375,7 @@ try {
   // ---- 60:40 content split (left: icon + description, right: readouts) ----
 
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -1434,14 +1434,14 @@ try {
     row.style.display = 'flex';
     row.style.flexDirection = 'column';
     row.style.justifyContent = 'center';
-    row.style.height = '20px';
+    row.style.height = '33px';
     row.style.boxSizing = 'border-box';
     row.style.overflow = 'hidden';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.lineHeight = '1';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
@@ -1450,7 +1450,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.lineHeight = '1.2';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = valueColor;
@@ -1715,7 +1715,7 @@ try {
 
   // ---- 60:40 content split (left: thermometer gauge, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -1736,7 +1736,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -1747,7 +1747,7 @@ try {
   var rightPane = document.createElement('div');
   rightPane.style.flex = '0 0 40%';
   rightPane.style.width = '40%';
-  rightPane.style.height = '175px';
+  rightPane.style.height = '262.5px';
   rightPane.style.boxSizing = 'border-box';
   rightPane.style.display = 'flex';
   rightPane.style.flexDirection = 'column';
@@ -1760,13 +1760,13 @@ try {
     row.style.display = 'flex';
     row.style.flexDirection = 'column';
     row.style.justifyContent = 'center';
-    row.style.height = '19px';
+    row.style.height = '32px';
     row.style.boxSizing = 'border-box';
     row.style.overflow = 'hidden';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
 
     var labelEl = document.createElement('span');
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.lineHeight = '1';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
@@ -1784,7 +1784,7 @@ try {
     row.appendChild(valueRow);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.lineHeight = '1.2';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.minWidth = '0'; valueEl.style.flex = '1 1 auto';
@@ -1934,7 +1934,7 @@ try {
       weatherData = weatherData.filter(function(d){ return d.id !== 'indoorTemp'; });
     }
 
-    var rowHeight = 175 / weatherData.length;
+    var rowHeight = 262.5 / weatherData.length;
     for (var ri2 = 0; ri2 < readoutRows.length; ri2++){
       var visible = ri2 < weatherData.length;
       var isLastVisible = ri2 === weatherData.length - 1;
@@ -2184,7 +2184,7 @@ try {
   }
 
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -2531,7 +2531,7 @@ try {
 
   // ---- 50:50 content split (left: gauge + hero values, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -2552,7 +2552,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -2580,7 +2580,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -2588,7 +2588,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -2984,7 +2984,7 @@ try {
 
   // ---- 60:40 content split (left: compass + hero values, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -3005,7 +3005,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -3033,7 +3033,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -3041,7 +3041,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -3394,7 +3394,7 @@ try {
 
   // ---- 60:40 content split (left: gauge + hero value, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -3415,7 +3415,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -3443,7 +3443,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -3451,7 +3451,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -3777,7 +3777,7 @@ try {
 
   // ---- 60:40 content split (left: gauge + hero value, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -3798,7 +3798,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -3826,7 +3826,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -3834,7 +3834,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -4200,7 +4200,7 @@ try {
 
   // ---- 60:40 content split (left: gauge + hero value, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -4221,7 +4221,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -4249,7 +4249,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -4257,7 +4257,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -4584,7 +4584,7 @@ try {
 
   // ---- 60:40 content split (left: tipping-bucket cross-section, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -4605,7 +4605,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -4633,7 +4633,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -4641,7 +4641,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -5132,7 +5132,7 @@ try {
 
   // ---- 60:40 content split (left: gauge + hero value, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -5153,7 +5153,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -5181,7 +5181,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -5189,7 +5189,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -5456,7 +5456,7 @@ try {
 
   // ---- 60:40 content split (left: gauge + hero value, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -5477,7 +5477,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -5505,7 +5505,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -5513,7 +5513,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -5791,7 +5791,7 @@ try {
 
   // ---- 60:40 content split (left: gauge + hero value, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -5812,7 +5812,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -5840,7 +5840,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -5848,7 +5848,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -6191,7 +6191,7 @@ try {
 
   // ---- 60:40 content split (left: globe, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -6212,7 +6212,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -6235,14 +6235,14 @@ try {
     row.style.display = 'flex';
     row.style.flexDirection = 'column';
     row.style.justifyContent = 'center';
-    row.style.height = '20px';
+    row.style.height = '33px';
     row.style.boxSizing = 'border-box';
     row.style.overflow = 'hidden';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -6250,7 +6250,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -6633,7 +6633,7 @@ try {
 
   // ---- 60:40 content split (left: day/night dial, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -6654,7 +6654,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -6677,14 +6677,14 @@ try {
     row.style.display = 'flex';
     row.style.flexDirection = 'column';
     row.style.justifyContent = 'center';
-    row.style.height = '20px';
+    row.style.height = '33px';
     row.style.boxSizing = 'border-box';
     row.style.overflow = 'hidden';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -6692,7 +6692,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -6977,7 +6977,7 @@ try {
 
   // ---- 60:40 content split (left: sky-path chart, right: analemma) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -6998,7 +6998,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -7009,7 +7009,7 @@ try {
   var rightPane = document.createElement('div');
   rightPane.style.flex = '0 0 40%';
   rightPane.style.width = '40%';
-  rightPane.style.height = '175px';
+  rightPane.style.height = '262.5px';
   rightPane.style.boxSizing = 'border-box';
   rightPane.style.overflow = 'hidden';
   rightPane.style.display = 'flex';
@@ -7493,7 +7493,7 @@ try {
 
   // ---- 60:40 content split (left: moon disc + phase name, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -7514,7 +7514,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -7537,14 +7537,14 @@ try {
     row.style.display = 'flex';
     row.style.flexDirection = 'column';
     row.style.justifyContent = 'center';
-    row.style.height = '22px';
+    row.style.height = '36px';
     row.style.boxSizing = 'border-box';
     row.style.overflow = 'hidden';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -7553,7 +7553,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap';
@@ -7789,7 +7789,7 @@ try {
 
   // ---- 60:40 content split (left: bolt graphic, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -7810,7 +7810,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -7837,16 +7837,16 @@ try {
     row.style.boxSizing = 'border-box';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
     if (wrap) {
-      row.style.minHeight = '20px';
+      row.style.minHeight = '33px';
       row.style.padding = '2px 0';
     } else {
-      row.style.height = '20px';
+      row.style.height = '33px';
       row.style.overflow = 'hidden';
     }
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -7854,7 +7854,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     if (wrap) {
@@ -8121,7 +8121,7 @@ try {
 
   // ---- 60:40 content split (left: 3 pollen icons, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -8142,7 +8142,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -8171,7 +8171,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -8179,7 +8179,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '8.5px';
+    valueEl.style.fontSize = '12.75px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
     row.appendChild(valueEl);
@@ -8397,7 +8397,7 @@ try {
 
   // ---- 60:40 content split (left: gas-bubble illustration, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -8418,7 +8418,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -8441,14 +8441,14 @@ try {
     row.style.display = 'flex';
     row.style.flexDirection = 'column';
     row.style.justifyContent = 'center';
-    row.style.height = '20px';
+    row.style.height = '33px';
     row.style.boxSizing = 'border-box';
     row.style.overflow = 'hidden';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '6.5px';
+    labelEl.style.fontSize = '9.75px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -8459,7 +8459,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '8.5px';
+    valueEl.style.fontSize = '12.75px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -8816,7 +8816,7 @@ try {
 
   // ---- 60:40 content split (left: pollutant icons, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -8837,7 +8837,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -8961,14 +8961,14 @@ try {
     row.style.display = 'flex';
     row.style.flexDirection = 'column';
     row.style.justifyContent = 'center';
-    row.style.height = '20px';
+    row.style.height = '33px';
     row.style.boxSizing = 'border-box';
     row.style.overflow = 'hidden';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
 
     var labelEl = document.createElement('span');
     labelEl.textContent = label;
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -8976,7 +8976,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -9209,7 +9209,7 @@ try {
   }
 
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -9230,7 +9230,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -9258,7 +9258,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -9266,7 +9266,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -9459,7 +9459,7 @@ try {
   }
 
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -9480,7 +9480,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -9508,7 +9508,7 @@ try {
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -9516,7 +9516,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     valueEl.style.whiteSpace = 'nowrap'; valueEl.style.overflow = 'hidden'; valueEl.style.textOverflow = 'ellipsis'; valueEl.style.display = 'block'; valueEl.style.width = '100%'; valueEl.style.minWidth = '0';
@@ -9757,7 +9757,7 @@ try {
   }
 
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -9778,7 +9778,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -9805,16 +9805,16 @@ try {
     row.style.boxSizing = 'border-box';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
     if (wrap) {
-      row.style.minHeight = '20px';
+      row.style.minHeight = '33px';
       row.style.padding = '3px 0';
     } else {
-      row.style.height = '20px';
+      row.style.height = '33px';
       row.style.overflow = 'hidden';
     }
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = 'var(--bs-body-color)';
@@ -9823,7 +9823,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     if (wrap) {
@@ -10054,7 +10054,7 @@ try {
   }
 
   var body = document.createElement('div');
-  body.style.height = '175px';
+  body.style.height = '262.5px';
   body.style.width = '100%';
   body.style.boxSizing = 'border-box';
   body.style.display = 'flex';
@@ -10271,7 +10271,7 @@ try {
   }
 
   var body = document.createElement('div');
-  body.style.height = '175px';
+  body.style.height = '262.5px';
   body.style.width = '100%';
   body.style.boxSizing = 'border-box';
   body.style.display = 'flex';
@@ -10448,7 +10448,7 @@ try {
 
   // ---- 60:40 content split (left: PV icon + hero power value, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -10469,7 +10469,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -10584,16 +10584,16 @@ try {
     row.style.boxSizing = 'border-box';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
     if (wrap) {
-      row.style.minHeight = '20px';
+      row.style.minHeight = '33px';
       row.style.padding = '3px 0';
     } else {
-      row.style.height = '20px';
+      row.style.height = '33px';
       row.style.overflow = 'hidden';
     }
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = overlayTextColor;
@@ -10602,7 +10602,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     if (wrap) {
@@ -10876,7 +10876,7 @@ try {
 
   // ---- 60:40 content split (left: PV icon + hero power value, right: readouts) ----
   var contentWrap = document.createElement('div');
-  contentWrap.style.height = '175px';
+  contentWrap.style.height = '262.5px';
   contentWrap.style.width = '100%';
   contentWrap.style.boxSizing = 'border-box';
   contentWrap.style.overflow = 'hidden';
@@ -10897,7 +10897,7 @@ try {
   var leftPane = document.createElement('div');
   leftPane.style.flex = '0 0 60%';
   leftPane.style.width = '60%';
-  leftPane.style.height = '175px';
+  leftPane.style.height = '262.5px';
   leftPane.style.boxSizing = 'border-box';
   leftPane.style.overflow = 'hidden';
   leftPane.style.display = 'flex';
@@ -11044,16 +11044,16 @@ try {
     row.style.boxSizing = 'border-box';
     row.style.borderBottom = '1px solid var(--bs-border-color)';
     if (wrap) {
-      row.style.minHeight = '20px';
+      row.style.minHeight = '33px';
       row.style.padding = '3px 0';
     } else {
-      row.style.height = '20px';
+      row.style.height = '33px';
       row.style.overflow = 'hidden';
     }
 
     var labelEl = document.createElement('span');
     DivumWXI18N.applyLabel(labelEl, label);
-    labelEl.style.fontSize = '7px';
+    labelEl.style.fontSize = '10.5px';
     labelEl.style.fontVariantCaps = 'small-caps';
     labelEl.style.letterSpacing = '.06em';
     labelEl.style.color = overlayTextColor;
@@ -11062,7 +11062,7 @@ try {
     row.appendChild(labelEl);
 
     var valueEl = document.createElement('span');
-    valueEl.style.fontSize = '9.5px';
+    valueEl.style.fontSize = '14.25px';
     valueEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, monospace';
     valueEl.style.color = 'var(--bw-accent)';
     if (wrap) {
