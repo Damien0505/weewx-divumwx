@@ -879,6 +879,28 @@ try {
     });
     return warnings;
   }
+  // ---- BOM (Bureau of Meteorology, Australia) Warnings RSS ---------------
+  function parseBomRss(xmlText){
+    var xml = new DOMParser().parseFromString(xmlText, 'text/xml');
+    if (xml.querySelector('parsererror')) throw new Error('bomwarnings.txt did not parse as XML');
+    var warnings = [];
+    xml.querySelectorAll('channel > item').forEach(function(item){
+      var rawTitle = (item.querySelector('title') || {}).textContent || '';
+      // BOM titles are "DD/HH:MM EST <free text, sometimes with embedded
+      // newlines/indentation>" -- strip the leading timestamp and collapse
+      // whitespace into a single clean line.
+      var title = rawTitle.replace(/^\s*\d{1,2}\/\d{2}:\d{2}\s+[A-Z]{2,4}\s+/, '').replace(/\s+/g, ' ').trim();
+      // A "Cancellation of ..." item means a previous warning has ENDED --
+      // showing it as a live, colored alert banner would be misleading, so
+      // these are filtered out rather than rendered.
+      if (/^cancellation of/i.test(title)) return;
+      var link = (item.querySelector('link') || {}).textContent || '';
+      var level = levelFromEventText(title);
+      warnings.push({ title: title, link: link, level: level });
+    });
+    return warnings;
+  }
+
   function tryParseDate(day, monthIdx, year, hhmm){
     if (monthIdx === -1) return null;
     var parts = hhmm.split(':');
@@ -987,7 +1009,8 @@ try {
       fetchJson('./jsondata/flood.txt'),
       fetchText('./jsondata/metofficerss.txt'),
       fetchJson('./jsondata/archive.json'),
-      fetchJson('./jsondata/almanac.json')
+      fetchJson('./jsondata/almanac.json'),
+      fetchText('./jsondata/bomwarnings.txt')
     ]).then(function(results){
       var auroraText = results[0].status === 'fulfilled' ? results[0].value : null;
       var cold = results[1].status === 'fulfilled' ? results[1].value : null;
@@ -997,6 +1020,7 @@ try {
       var rssText = results[5].status === 'fulfilled' ? results[5].value : null;
       var archive = results[6].status === 'fulfilled' ? results[6].value : {};
       var almanac = results[7].status === 'fulfilled' ? results[7].value : {};
+      var bomText = results[8].status === 'fulfilled' ? results[8].value : null;
       var stationLocation = (archive.meta && archive.meta.station_location) || 'this location';
 
       if (ADVISORY_ZONE !== 'unitedkingdom') return;
@@ -1117,6 +1141,24 @@ try {
           descriptionHtml: escapeHtml(item.message || '') + '.'
         }));
       });
+
+      if (bomText) {
+        try {
+          var bomWarnings = parseBomRss(bomText);
+          bomWarnings.forEach(function(w){
+            var cfg = getAlertLevelConfig(w.level);
+            sections.push(buildSection({
+              bg: cfg.bg, text: cfg.text, icon: TRIANGLE_ICON[w.level],
+              headlineHtml: escapeHtml(w.title) + '.',
+              descriptionHtml: w.link
+                ? ('Source: Bureau of Meteorology. <a href="' + escapeHtml(w.link) + '" target="_blank" rel="noopener">View full bulletin</a>')
+                : 'Source: Bureau of Meteorology.'
+            }));
+          });
+        } catch (e) {
+          console.warn('alertBar: bomwarnings.txt parse failed —', e.message);
+        }
+      }
 
       render(sections);
     }).catch(function(e){

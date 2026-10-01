@@ -2079,6 +2079,29 @@ class APIConfig:
         'requires_location_code': True
     }
     
+    BOMWARNINGS = {
+        'name': 'Bureau of Meteorology Warnings RSS',
+        'polling_interval': 300,  # 5 minutes
+        # bom_product_id is the FULL per-state/per-area product id BOM assigns its
+        # warnings-summary RSS feed (e.g. "IDZ00059.warnings_vic" for Victoria) --
+        # left as one free-form placeholder rather than guessing a state-code
+        # naming convention that may not hold across all of BOM's products.
+        # Find yours at http://www.bom.gov.au/australia/warnings/ (view source
+        # of the RSS link for your state/territory).
+        'url_template': 'https://www.bom.gov.au/fwo/{bom_product_id}.xml',
+        'requires_app_id': False,
+        'uses_coordinates': False,
+        'requires_bom_product_id': True,
+        'content_type': 'xml',
+        # BOM's website actively blocks non-browser-looking User-Agent strings
+        # (confirmed: the default WeeWX-WeatherAPI UA gets a 403 "potential
+        # automated access" block; a standard browser UA does not).
+        'custom_headers': {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                           '(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        }
+    }
+
     METOFFICERSS = {
         'name': 'Met Office Warnings RSS',
         'polling_interval': 300,  # 5 minutes
@@ -2260,6 +2283,13 @@ class WeatherAPIPoller:
         if self.api_config.get('requires_region_code', False):
             if not self.region_code or self.region_code == '<regioncode>':
                 logerr(f"{self.name}: API type '{self.api_type}' requires a valid region_code (e.g., se)")
+
+        # Get bom_product_id for BOM Warnings RSS
+        self.bom_product_id = config.get('bom_product_id', '')
+        if self.api_config.get('requires_bom_product_id', False):
+            if not self.bom_product_id or self.bom_product_id == '<bom_product_id>':
+                logerr(f"{self.name}: API type '{self.api_type}' requires a valid bom_product_id "
+                       f"(e.g., IDZ00059.warnings_vic -- see http://www.bom.gov.au/australia/warnings/)")
         
         # Get client credentials for Xweather
         self.client_id = config.get('client_id', '')
@@ -2357,6 +2387,10 @@ class WeatherAPIPoller:
         # Add region_code for Met Office RSS
         if self.api_config.get('requires_region_code', False):
             params['region_code'] = self.region_code
+
+        # Add bom_product_id for BOM Warnings RSS
+        if self.api_config.get('requires_bom_product_id', False):
+            params['bom_product_id'] = self.bom_product_id
         
         # Add client credentials for Xweather
         if self.api_config.get('requires_client_credentials', False):
@@ -2397,12 +2431,13 @@ class WeatherAPIPoller:
                 'User-Agent': 'WeeWX-WeatherAPI/2.0 (https://github.com/weewx/weewx)'
             }
             
-            # Add custom headers for custom APIs
-            if self.api_config.get('is_custom', False):
-                custom_headers = self.api_config.get('custom_headers', {})
-                if custom_headers:
-                    headers.update(custom_headers)
-                    logdbg(f"{self.name}: Added custom headers: {list(custom_headers.keys())}")
+            # Add any API-specific headers (used by api_type=custom for
+            # user-supplied headers, and by built-in types like bomwarnings
+            # that need something other than the default WeeWX User-Agent)
+            custom_headers = self.api_config.get('custom_headers', {})
+            if custom_headers:
+                headers.update(custom_headers)
+                logdbg(f"{self.name}: Added custom headers: {list(custom_headers.keys())}")
             
             # Add authentication header if API uses header-based authentication
             if self.api_config.get('uses_header_auth', False):
@@ -2583,6 +2618,7 @@ if __name__ == '__main__':
     print("  - heatalert: UKHSA Heat Alert (1800s, requires location_code)")
     print("  - coldalert: UKHSA Cold Alert (1800s, requires location_code)")
     print("  - metofficerss: Met Office Warnings RSS (300s, requires region_code)")
+    print("  - bomwarnings: Bureau of Meteorology Warnings RSS (300s, requires bom_product_id)")
     print("  - xweather: Xweather Forecast (300s, requires client_id + client_secret)")
     print("  - boltek: Boltek NGX Lightning Detector (60s)")
     print("  - custom: User-defined API (requires url + poll_interval)")
