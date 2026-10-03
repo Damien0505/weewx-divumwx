@@ -262,7 +262,7 @@
 
     var defs = svg.append('defs');
     var bulbGradient = defs.append('radialGradient')
-      .attr('id', 'bulbGradient').attr('cx', '50%').attr('cy', '50%').attr('r', '50%')
+      .attr('id', 'indoorBulbGradient').attr('cx', '50%').attr('cy', '50%').attr('r', '50%')
       .attr('fx', '50%').attr('fy', '50%');
     bulbGradient.append('stop').attr('offset', '0%').style('stop-color', innerBulbColor);
     bulbGradient.append('stop').attr('offset', '90%').style('stop-color', v.tempColor);
@@ -290,7 +290,7 @@
 
     svg.append('circle').attr('class', 'bulb')
       .attr('cx', bulb_cx).attr('cy', bulb_cy).attr('r', bulbRadius - 6)
-      .style('fill', 'url(#bulbGradient)').style('stroke-width', '2px');
+      .style('fill', 'url(#indoorBulbGradient)').style('stroke-width', '2px');
 
     var tickValues = d3.range((domain[1] - domain[0]) / step + 1).map(function(n){ return domain[0] + n * step; });
     var axis = d3.axisLeft(yScale).tickValues(tickValues).tickSize(7).tickPadding(5);
