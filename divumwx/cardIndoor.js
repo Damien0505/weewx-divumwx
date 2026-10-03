@@ -408,8 +408,7 @@
       var indoorAvg3hRH = num(parseFloat(t.indoor_humid_avg_3h), null);
       var indoorApp = indoorApparent(indoorNow, indoorRH);
       var indoorApp3h = indoorApparent(indoorAvg3h, indoorAvg3hRH);
-      var indoorHI = num(parseFloat(t.indoor_feels_like_c), null);
-      if (indoorHI === null) indoorHI = indoorHeat(indoorNow, indoorRH);
+      var indoorHI = indoorHeat(indoorNow, indoorRH);
       var indoorHI3h = indoorHeat(indoorAvg3h, indoorAvg3hRH);
 
       lastData = {
