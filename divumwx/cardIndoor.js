@@ -402,8 +402,8 @@
       var t = arch.temp || {}, dw = arch.dew || {}, h = arch.humid || {};
       function num(x, fallback){ return (typeof x === 'number' && !isNaN(x)) ? x : (fallback || 0); }
 
-      var indoorNow = num(t.indoor_current, null);
-      var indoorRH = num(parseFloat(h.indoors_current), null);
+      var indoorNow = num(o.inTemp, num(t.indoor_current, null));
+      var indoorRH = num(o.inHumidity, num(parseFloat(h.indoors_current), null));
       var indoorAvg3h = num(parseFloat(t.indoor_avg_3h), null);
       var indoorAvg3hRH = num(parseFloat(t.indoor_humid_avg_3h), null);
       var indoorApp = indoorApparent(indoorNow, indoorRH);
