@@ -880,6 +880,15 @@ try {
     return warnings;
   }
   // ---- BOM (Bureau of Meteorology, Australia) Warnings RSS ---------------
+  // Formats a BOM issue time as "16:15 (2h 10m ago)" in Victorian time,
+  // so it's obvious whether a warning is brand new or has been running a while.
+  function formatBomIssued(d){
+    var time = d.toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit', timeZone: 'Australia/Melbourne' });
+    var mins = Math.max(0, Math.round((Date.now() - d.getTime()) / 60000));
+    var ago = mins < 60 ? (mins + ' min ago') : (Math.floor(mins / 60) + 'h ' + (mins % 60) + 'm ago');
+    return time + ' (' + ago + ')';
+  }
+
   function parseBomRss(xmlText){
     var xml = new DOMParser().parseFromString(xmlText, 'text/xml');
     if (xml.querySelector('parsererror')) throw new Error('bomwarnings.txt did not parse as XML');
@@ -896,7 +905,10 @@ try {
       if (/^cancellation of/i.test(title)) return;
       var link = (item.querySelector('link') || {}).textContent || '';
       var level = levelFromEventText(title);
-      warnings.push({ title: title, link: link, level: level });
+      var pub = (item.querySelector('pubDate') || {}).textContent || '';
+      var issued = pub ? new Date(pub) : null;
+      if (issued && isNaN(issued.getTime())) issued = null;
+      warnings.push({ title: title, link: link, level: level, issued: issued });
     });
     return warnings;
   }
@@ -1150,9 +1162,9 @@ try {
             sections.push(buildSection({
               bg: cfg.bg, text: cfg.text, icon: TRIANGLE_ICON[w.level],
               headlineHtml: escapeHtml(w.title) + '.',
-              descriptionHtml: w.link
+              descriptionHtml: (w.issued ? ('Issued ' + escapeHtml(formatBomIssued(w.issued)) + '. ') : '') + (w.link
                 ? ('Source: Bureau of Meteorology. <a href="' + escapeHtml(w.link) + '" target="_blank" rel="noopener">View full bulletin</a>')
-                : 'Source: Bureau of Meteorology.'
+                : 'Source: Bureau of Meteorology.')
             }));
           });
         } catch (e) {
