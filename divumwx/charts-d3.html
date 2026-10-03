@@ -341,6 +341,7 @@ footer{font-size:12px;color:var(--bs-secondary-color);font-family:'Lexend', syst
 
   <div class="records-tabs" id="recordsTabs">
     <button class="records-tab" data-cat="temperature">Temperature</button>
+    <button class="records-tab" data-cat="indoor">Indoors</button>
     <button class="records-tab" data-cat="wind">Wind &amp; Gust</button>
     <button class="records-tab" data-cat="rain">Rain &amp; Rain Rate</button>
     <button class="records-tab" data-cat="barometer">Barometer</button>
@@ -1103,6 +1104,21 @@ const CHART_CATEGORIES = {
     ],
     yAxes: ['temp','humid'],
   },
+  indoor: {
+    note: 'Indoor daily high / low / average temperature, plus hourly temperature, dew point and humidity.',
+    dailyType: 'line',
+    daily: [
+      {name:'High', series:'inTempMax', kind:'temp', color:'tempHigh'},
+      {name:'Low',  series:'inTempMin', kind:'temp', color:'tempLow'},
+      {name:'Avg',  series:'inTempAvg', kind:'temp', color:'tempAvg'},
+    ],
+    hourly: [
+      {name:'Temp',     series:'inTempHourly',  kind:'temp',  color:'tempAvg'},
+      {name:'Dew Point',series:'inDewHourly',   kind:'temp',  color:'dew', area:true},
+      {name:'Humidity', series:'inHumidHourly', kind:'humid', color:'humid', yAxisIndex:1},
+    ],
+    yAxes: ['temp','humid'],
+  },
   wind: {
     note: '',
     dailyType: 'line',
@@ -1320,6 +1336,7 @@ let chart = null;
 
 const CATEGORY_LABELS = {
   temperature: 'Temperature',
+  indoor: 'Indoors',
   wind: 'Wind & Gust',
   rain: 'Rain & Rain Rate',
   barometer: 'Barometer',
@@ -2337,6 +2354,7 @@ function isBaseCardEnabled(base, enabledCards) {
 
 const TAB_CATEGORY_BASES = {
   temperature: { any: ['outTemp'] },
+  indoor:      { any: ['inTemp'] },
   wind:        { any: ['windSpeed'] },
   rain:        { any: ['rain'] },
   barometer:   { any: ['barom'] },

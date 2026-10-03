@@ -763,6 +763,9 @@ null
 "indoor_trend": $indoorTrend,
 "indoor_day_max": $day.inTemp.max.format(format_string="%.2f", None_string="null", add_label=False, localize=False),
 "indoor_day_min": $day.inTemp.min.format(format_string="%.2f", None_string="null", add_label=False, localize=False),
+"indoor_day_avg": $day.inTemp.avg.format(format_string="%.2f", None_string="null", add_label=False, localize=False),
+"indoor_avg_3h": $span(time_delta=10800).inTemp.avg.format(format_string="%.2f", None_string="null", add_label=False, localize=False),
+"indoor_humid_avg_3h": $span(time_delta=10800).inHumidity.avg.format(format_string="%.1f", None_string="null", add_label=False, localize=False),
 ## Indoor "feels like" — NWS heat-index formula, same as the original PHP,
 ## just translated to Cheetah's embedded Python rather than re-derived.
 #set $indoorTC = float($current.inTemp.raw or 0)

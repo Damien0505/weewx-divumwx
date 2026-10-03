@@ -437,6 +437,15 @@
 "outTempHourly": $span(hour_delta=24).outTemp.series(aggregate_type='avg', aggregate_interval=3600, time_series='start', time_unit='unix_epoch_ms').degree_C.round(1).json,
 "outDewHourly": $span(hour_delta=24).dewpoint.series(aggregate_type='avg', aggregate_interval=3600, time_series='start', time_unit='unix_epoch_ms').degree_C.round(1).json,
 "outHumidHourly": $span(hour_delta=24).outHumidity.series(aggregate_type='avg', aggregate_interval=3600, time_series='start', time_unit='unix_epoch_ms').round(0).json,
+"inTempMax": $alltime.inTemp.series(aggregate_type='max', aggregate_interval=86400, time_series='start', time_unit='unix_epoch_ms').degree_C.round(1).json,
+"inTempMin": $alltime.inTemp.series(aggregate_type='min', aggregate_interval=86400, time_series='start', time_unit='unix_epoch_ms').degree_C.round(1).json,
+"inTempAvg": $alltime.inTemp.series(aggregate_type='avg', aggregate_interval=86400, time_series='start', time_unit='unix_epoch_ms').degree_C.round(1).json,
+"inHumidMax": $alltime.inHumidity.series(aggregate_type='max', aggregate_interval=86400, time_series='start', time_unit='unix_epoch_ms').round(0).json,
+"inHumidMin": $alltime.inHumidity.series(aggregate_type='min', aggregate_interval=86400, time_series='start', time_unit='unix_epoch_ms').round(0).json,
+"inDewMax": $alltime.inDewpoint.series(aggregate_type='max', aggregate_interval=86400, time_series='start', time_unit='unix_epoch_ms').degree_C.round(0).json,
+"inTempHourly": $span(hour_delta=24).inTemp.series(aggregate_type='avg', aggregate_interval=3600, time_series='start', time_unit='unix_epoch_ms').degree_C.round(1).json,
+"inDewHourly": $span(hour_delta=24).inDewpoint.series(aggregate_type='avg', aggregate_interval=3600, time_series='start', time_unit='unix_epoch_ms').degree_C.round(1).json,
+"inHumidHourly": $span(hour_delta=24).inHumidity.series(aggregate_type='avg', aggregate_interval=3600, time_series='start', time_unit='unix_epoch_ms').round(0).json,
 ##vpd
 #set $fv = []
 #try
